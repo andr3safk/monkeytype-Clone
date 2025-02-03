@@ -26,7 +26,7 @@ body{
   align-items: center;
 }
 
-.header img{
+.header svg{
   height: 30px;
   color: var(--yellow);
 }
