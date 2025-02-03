@@ -19,11 +19,16 @@
 body{
   background-color: var(--black);
   min-height: 100vh;
+  padding: 1rem;
+  max-width: 1080px;
+  margin: auto;
 }
 
 .header{
   display: flex;
   align-items: center;
+  gap: 8px;
+  padding-top: 20px;
 }
 
 .header svg{
@@ -34,7 +39,6 @@ body{
 .header a{
   text-decoration: none;
   font-weight: 500;
-  margin-left: 4px;
   color: var(--correct);
   font-size:x-large;
 }
