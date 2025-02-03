@@ -1,0 +1,14 @@
+*{
+  box-sizing: border-box;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --yellow: #e2b714;
+  --black: #323437;
+  --gray: #6f7174;
+  --correct: #d1d0c5;
+  --error: #ca4754;
+}
