@@ -4,33 +4,32 @@ const $input = document.querySelector('input');
 
 const INITIAL_TIME = 30;
 
+const TEXT = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit similique aperiam reiciendis rerum facilis nisi eveniet, quos inventore quam optio laudantium blanditiis. Harum quis quia explicabo eos praesentium, dolorum velit!'
+
 let words = [];
 let currentTime = INITIAL_TIME;
 
-async function loadWords() {
-  try{
-    const response = await fetch("./src/words.json");
-    const data = await response.json();
-    words = data.words;
-    displayWords();
+initGame();
+initEvents();
 
-  }catch (error){
-    console.error("Error al cargar las palabras:", error);
-  };
-};
+function initGame() {
+  const textContent = $paragraph.textContent;
+  words = TEXT.split(' ').slice(0, 32);
+  currentTime = INITIAL_TIME;
 
-function getRandom(count){
-  const shuffled = words.sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count);
+  $time.textContent = currentTime;
+
+  $paragraph.innerHTML = words.map((word, index) => {
+    const letters = word.split('')
+
+    return `<word>
+      ${letters
+        .map(letter => `<letter>${letter}</letter>`)
+        .join('')
+      }
+    </word>`
+  }).join('')
 }
 
-function displayWords() {
-  if (words.length > 0) {
-    const selectedWords = getRandomWords(32);
-    $paragraph.textContent = selectedWords.join(" ");
-  } else {
-    $paragraph.textContent = "No hay palabras disponibles.";
-  }
+function initEvents() {
 }
-
-loadWords()
