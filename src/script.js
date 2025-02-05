@@ -29,7 +29,18 @@ function initGame() {
       }
     </word>`
   }).join('')
+
+  const intervalID = setInterval(()=>{
+    currentTime--
+    $time.textContent = currentTime
+
+    if (currentTime === 0) {
+      clearInterval(intervalID)
+      gameOver()
+    }
+  }, 1000)
 }
 
-function initEvents() {
-}
+function initEvents() {}
+
+function gameOver() {}

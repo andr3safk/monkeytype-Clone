@@ -58,6 +58,15 @@ main p{
   margin-top: 16px;
 }
 
+input {
+  z-index: -999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  /*opacity: 0;*/
+}
+
 main time{
   color: var(--correct);
   font-size: 25px;
