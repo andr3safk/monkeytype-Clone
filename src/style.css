@@ -86,6 +86,14 @@ letter{
     font-weight: 700;
     animation: 1s blink infinite ease-in-out;
   }
+
+  &.correct{
+    color: var(--correct);
+  }
+
+  &.incorrect{
+    color: var(--error);
+  }
 }
 
 @keyframes blink {

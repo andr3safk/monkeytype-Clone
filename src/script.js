@@ -4,7 +4,7 @@ const $input = document.querySelector('input');
 
 const INITIAL_TIME = 30;
 
-const TEXT = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit similique aperiam reiciendis rerum facilis nisi eveniet, quos inventore quam optio laudantium blanditiis. Harum quis quia explicabo eos praesentium, dolorum velit!'
+const TEXT = 'lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit similique aperiam reiciendis rerum facilis nisi eveniet, quos inventore quam optio laudantium blanditiis. Harum quis quia explicabo eos praesentium, dolorum velit!'
 
 let words = [];
 let currentTime = INITIAL_TIME;
@@ -65,7 +65,9 @@ function onKeyUp () {
 
   console.log({value: $input.value, currentWord})
 
-  const $allLetters = $currentWord.querySelector('letter')
+  const $allLetters = $currentWord.querySelectorAll('letter')
+
+  $allLetters.forEach($letter => $letter.classList.remove('correct', 'incorrect'))
 
   $input.value.split('').forEach((char, index) => {
     const $letter = $allLetters[index]
