@@ -48,7 +48,7 @@ main{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 50vh;
+  min-height: 60vh;
 }
 
 main p{
@@ -82,7 +82,7 @@ letter{
     position: absolute;
     color: var(--yellow);
     font-size: 27px;
-    left: -60%;
+    left: -70%;
     font-weight: 700;
     animation: 1s blink infinite ease-in-out;
   }
