@@ -72,3 +72,29 @@ main time{
   font-size: 25px;
   font-weight: 600;
 }
+
+letter{
+  color: var(--gray);
+  position: relative;
+
+  &.active::before{
+    content: '|';
+    position: absolute;
+    color: var(--yellow);
+    font-size: 27px;
+    left: -60%;
+    font-weight: 700;
+    animation: 1s blink infinite ease-in-out;
+  }
+}
+
+@keyframes blink {
+  0%, 25%{
+    opacity: 1;
+  }
+
+  75%{
+    opacity: 0;
+  }
+  
+}
