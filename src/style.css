@@ -56,6 +56,7 @@ main p{
   font-size: 1.7rem;
   line-height: 47px;
   margin-top: 16px;
+  letter-spacing: 1px;
 }
 
 input {
@@ -68,7 +69,7 @@ input {
 }
 
 main time{
-  color: var(--correct);
+  color: var(--yellow);
   font-size: 25px;
   font-weight: 600;
 }
@@ -93,6 +94,10 @@ letter{
 
   &.incorrect{
     color: var(--error);
+  }
+
+  &.active.is-last::before{
+    left: 65%;
   }
 }
 

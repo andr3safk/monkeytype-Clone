@@ -78,6 +78,16 @@ function onKeyUp () {
     $letter.classList.add(letterClass)
   })
 
+  $currentLetter.classList.remove('active', 'is-last')
+  const inputLenght = $input.value.length
+  const $newActiveLetter = $allLetters[inputLenght]
+
+  if ($newActiveLetter){
+    $allLetters[inputLenght].classList.add('active')
+  }else {
+    $currentLetter.classList.add('active', 'is-last')
+  }
+
 }
 
 function gameOver () {}
