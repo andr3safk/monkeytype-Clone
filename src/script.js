@@ -25,10 +25,8 @@ function initGame() {
     return `<word>
       ${letters
         .map(letter => `<letter>${letter}</letter>`)
-        .join('')
-      }
-    </word>`
-  }).join('')
+        .join('')}</word>`
+  }).join(' ')
 
   const $firstWord = $paragraph.querySelector('word')
   $firstWord.classList.add('active')
