@@ -55,7 +55,28 @@ function initEvents() {
   $input.addEventListener('keyup', onKeyUp)
 }
 
-function onKeyDown () {}
+function onKeyDown (event) {
+
+  const $currentWord = $paragraph.querySelector('word.active')
+  const $currentLetter = $currentWord.querySelector('letter.active')
+
+  const { key } = event
+  if (key === ' '){
+    event.preventDefault()
+
+    const $nextWord = $currentWord.nextElementSibling
+    const $nextLetter = $nextWord.querySelector('letter')
+
+    $currentWord.classList.remove('active')
+    $currentLetter.classList.remove('active')
+
+    $nextWord.classList.add('active')
+    $nextLetter.classList.add('active')
+
+    $input.value = ''
+  }
+}
+
 function onKeyUp () {
   const $currentWord = $paragraph.querySelector('word.active')
   const $currentLetter = $currentWord.querySelector('letter.active')
