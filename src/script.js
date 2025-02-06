@@ -67,13 +67,18 @@ function onKeyDown (event) {
     const $nextWord = $currentWord.nextElementSibling
     const $nextLetter = $nextWord.querySelector('letter')
 
-    $currentWord.classList.remove('active')
+    $currentWord.classList.remove('active', 'marked')
     $currentLetter.classList.remove('active')
 
     $nextWord.classList.add('active')
     $nextLetter.classList.add('active')
 
     $input.value = ''
+
+    const hasMisedLetters = $currentWord.querySelectorAll('letter:not(.correct)').length > 0
+    
+    const classToAdd = hasMisedLetters ? 'marked' : 'correct'
+    $currentWord.classList.add(classToAdd)
   }
 }
 

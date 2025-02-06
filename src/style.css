@@ -101,6 +101,12 @@ letter{
   }
 }
 
+word{
+  &.marked{
+    border-bottom: 2px solid var(--error);
+  }
+}
+
 @keyframes blink {
   0%, 25%{
     opacity: 1;
