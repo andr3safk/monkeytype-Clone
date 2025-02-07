@@ -83,7 +83,7 @@ letter{
     position: absolute;
     color: var(--yellow);
     font-size: 27px;
-    left: -70%;
+    left: -60%;
     font-weight: 700;
     animation: 1s blink infinite ease-in-out;
   }
@@ -102,8 +102,11 @@ letter{
 }
 
 word{
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+
   &.marked{
-    border-bottom: 2px solid var(--error);
+    border-color:var(--error);
   }
 }
 
