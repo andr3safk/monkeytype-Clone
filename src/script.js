@@ -2,6 +2,10 @@ import { words as INITIAL_WORDS } from './words.js'
 const $time = document.querySelector('time');
 const $paragraph = document.querySelector('p');
 const $input = document.querySelector('input');
+const $game = document.querySelector('#game');
+const $results = document.querySelector('#results');
+const $wpm = document.querySelector('h3');
+const $accuracy = document.querySelector('h3:last-child')
 
 const INITIAL_TIME = 30;
 
@@ -144,4 +148,22 @@ function onKeyUp () {
 
 }
 
-function gameOver () {}
+function gameOver () {
+
+  $game.style.display = 'none';
+  $results.style.display = 'flex';
+
+  const correctWords = $paragraph.querySelectorAll('word.correct').length;
+  const correctLetters = $paragraph.querySelectorAll('letter.correct').length;
+  const incorrectLetters = $paragraph.querySelectorAll('letter.incorrect').length;
+  const totalLetters = correctLetters + incorrectLetters;
+
+  const accuracy = totalLetters > 0
+    ? (correctLetters / totalLetters) * 100
+    : 0;
+
+  const wpm = (correctWords / INITIAL_TIME) * 60
+
+  $wpm.textContent = wpm.toFixed(2)
+  $accuracy.textContent = `${accuracy.toFixed(2)}%`
+}
