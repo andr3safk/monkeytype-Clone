@@ -145,3 +145,22 @@ h3{
   font-weight: 500;
   padding-top: 20px;
 }
+
+#button-reload{
+  background: transparent;
+  border: 0;
+  margin-top: 32px;
+  padding: 14px 32px;
+  color: var(--correct);
+  opacity: .4;
+  display: inline-block;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 18px;
+
+  &:hover{
+    background: #444;
+    opacity: 1;
+    scale: 110%;
+  }
+}
