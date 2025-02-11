@@ -65,7 +65,7 @@ input {
   top: 0;
   left: 0;
   pointer-events: none;
-  /*opacity: 0;*/
+  opacity: 0;
 }
 
 main time{
@@ -119,4 +119,12 @@ word{
     opacity: 0;
   }
   
+}
+
+#game{
+  display: block;
+}
+
+#results{
+  display: none;
 }
